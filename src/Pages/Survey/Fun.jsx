@@ -6,7 +6,10 @@ const Fun = () => {
 
   const no = () => {
     Swal.fire({
-      title: 'Custom animation with Animate.css',
+      imageUrl: 'https://i.ibb.co/b10f56Y/output-onlinegiftools-2.gif',
+      title: 'HAHAHAHA',
+      color: 'white',
+      background: 'black',
       showClass: {
         popup: `
       animate__animated
@@ -33,41 +36,86 @@ const Fun = () => {
   };
 
   return (
-    <div className='items' style={{ width: '600px', height: '600px', backgroundColor: 'white' }}>
-      <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <label
-          style={{ fontSize: '20px', fontFamily: 'Arial', fontWeight: 'bold' }}
+    <>
+      {/* <div
+        className="items-center flex justify-center mx-auto border-red-600 "
+        style={{ width: '600px', height: '600px', backgroundColor: 'white' }}
+      >
+        <div
+          className="border-red-600"
+          style={{ textAlign: 'center', marginTop: '50px' }}
         >
-          Are you gay?
-        </label>
+          <label
+            style={{
+              fontSize: '20px',
+              fontFamily: 'Arial',
+              fontWeight: 'bold',
+            }}
+          >
+            Are you gay?
+          </label>
+        </div>
+        <button
+          style={{
+            fontSize: '20px',
+            fontFamily: 'Arial',
+            fontWeight: 'bold',
+            position: 'absolute',
+            top: `${position.y}px`,
+            left: `${position.x}px`,
+          }}
+          onMouseEnter={motionMouse}
+        >
+          no
+        </button>
+        <button
+          style={{
+            fontSize: '20px',
+            fontFamily: 'Arial',
+            fontWeight: 'bold',
+            position: 'absolute',
+            top: '100px',
+            left: '350px',
+          }}
+          onClick={no}
+        >
+          yes
+        </button>
+      </div> */}
+
+
+      <div
+        className="items-center flex justify-center mx-auto border-red-600 "
+      >
+        <div
+          className="border-red-600"
+        >
+          <h1
+          >
+            Are you gay?
+          </h1>
+        </div>
+        <button
+className='btn btn-primary'
+          onMouseEnter={motionMouse}
+        >
+          no
+        </button>
+        <button
+          style={{
+            fontSize: '20px',
+            fontFamily: 'Arial',
+            fontWeight: 'bold',
+            position: 'absolute',
+            top: '100px',
+            left: '350px',
+          }}
+          onClick={no}
+        >
+          yes
+        </button>
       </div>
-      <button
-        style={{
-          fontSize: '20px',
-          fontFamily: 'Arial',
-          fontWeight: 'bold',
-          position: 'absolute',
-          top: `${position.y}px`,
-          left: `${position.x}px`,
-        }}
-        onMouseEnter={motionMouse}
-      >
-        no
-      </button>
-      <button
-        style={{
-          fontSize: '20px',
-          fontFamily: 'Arial',
-          fontWeight: 'bold',
-          position: 'absolute',
-          top: '100px',
-          left: '350px',
-        }}
-        onClick={no}
-      >
-        yes
-      </button>
-    </div>
+    </>
   );
 };
 
