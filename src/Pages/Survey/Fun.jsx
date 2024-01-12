@@ -8,6 +8,7 @@ const Fun = () => {
     Swal.fire({
       imageUrl: 'https://i.ibb.co/b10f56Y/output-onlinegiftools-2.gif',
       title: 'HAHAHAHA',
+      text: 'I knew It',
       color: 'white',
       background: 'black',
       showClass: {
@@ -25,7 +26,6 @@ const Fun = () => {
     `,
       },
     });
-    ('I Knew It');
   };
 
   const motionMouse = () => {
@@ -37,9 +37,9 @@ const Fun = () => {
 
   return (
     <>
-      {/* <div
+      <div
         className="items-center flex justify-center mx-auto border-red-600 "
-        style={{ width: '600px', height: '600px', backgroundColor: 'white' }}
+        // style={{ width: '600px', height: '600px', backgroundColor: 'white' }}
       >
         <div
           className="border-red-600"
@@ -64,39 +64,6 @@ const Fun = () => {
             top: `${position.y}px`,
             left: `${position.x}px`,
           }}
-          onMouseEnter={motionMouse}
-        >
-          no
-        </button>
-        <button
-          style={{
-            fontSize: '20px',
-            fontFamily: 'Arial',
-            fontWeight: 'bold',
-            position: 'absolute',
-            top: '100px',
-            left: '350px',
-          }}
-          onClick={no}
-        >
-          yes
-        </button>
-      </div> */}
-
-
-      <div
-        className="items-center flex justify-center mx-auto border-red-600 "
-      >
-        <div
-          className="border-red-600"
-        >
-          <h1
-          >
-            Are you gay?
-          </h1>
-        </div>
-        <button
-className='btn btn-primary'
           onMouseEnter={motionMouse}
         >
           no
