@@ -1,25 +1,30 @@
-import { useState } from 'react';
-import Swal from 'sweetalert2';
-import '../../Styles/yes.css';
+import { useState } from "react";
+import Swal from "sweetalert2";
+import "../../Styles/yes.css";
 
 const Fun2 = () => {
-  const [position, setPosition] = useState({ x: 500, y: 300 });
-
   const background = {
     backgroundImage: `url(https://i.ibb.co/z4bkdTn/83d5baf5-e9f0-4970-b803-19b3a26e2c41.gif)`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed',
-    minHeight: '100vh',
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+    minHeight: "100vh",
   };
-
+  function getRandomPosition() {
+    const maxX = window.innerWidth - 100;
+    const maxY = window.innerHeight - 40;
+    const x = Math.floor(Math.random() * maxX);
+    const y = Math.floor(Math.random() * maxY);
+    return { x: x, y: y };
+  }
   const no = () => {
     Swal.fire({
-      imageUrl: 'https://i.ibb.co/b10f56Y/output-onlinegiftools-2.gif',
-      title: 'HAHAHAHA',
-      text: 'I Knew It',
-      color: 'white',
-      background: 'black',
+      imageUrl: "https://i.ibb.co/b10f56Y/output-onlinegiftools-2.gif",
+      title: "HAHAHAHA",
+      text: "I Knew It",
+      color: "white",
+      width: "400",
+      background: "black",
       showClass: {
         popup: `
       animate__animated
@@ -38,31 +43,23 @@ const Fun2 = () => {
   };
 
   const motionMouse = () => {
-    setPosition({
-      x: Math.floor(Math.random() * 500),
-      y: Math.floor(Math.random() * 500),
-    });
+    const btn = document.getElementById("no");
+    const newPosition = getRandomPosition();
+    btn.style.position = "absolute";
+    btn.style.left = newPosition.x + "px";
+    btn.style.top = newPosition.y + "px";
   };
-
   return (
     <div style={background}>
       <div>
-        <div className="items-center w-full">
-          <div className="">
-            <h1 className="font-bold pt-48 text-white text-3xl flex text-center justify-center">
+        <div className="flex flex-col items-center w-screen justify-center h-screen gap-5">
+          <div>
+            <h1 className="font-bold  text-white text-3xl flex text-center justify-center">
               Are You Gay?
             </h1>
           </div>
-          <div className="flex flex-row-reverse items-center mt-20  w-1/2">
-            <button
-              className="yes"
-              style={{
-                position: 'absolute',
-                top: `${position.y}px`,
-                left: `${position.x}px`,
-              }}
-              onMouseEnter={motionMouse}
-            >
+          <div className="flex flex-row items-center  gap-5">
+            <button id="no" className="yes" onMouseEnter={motionMouse}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 36 36"
@@ -106,15 +103,7 @@ const Fun2 = () => {
               <span className="now">No!</span>
               <span className="play">No</span>
             </button>
-            <button
-              className="yes"
-              style={{
-                position: 'absolute',
-                top: '300px',
-                left: '900px',
-              }}
-              onClick={no}
-            >
+            <button className="yes" onClick={no}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 36 36"
